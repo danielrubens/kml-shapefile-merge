@@ -1,5 +1,5 @@
-outputMergefn = 'C://Users//Daniel//Desktop//kml-shapefile//rodovias.shp'
-directory = "C://Users//Daniel//Desktop//kml-shapefile//"
+outputMergefn = 'C://Users//Desktop//kml-shapefile//rodovias.shp'
+directory = "C://Users//Desktop//kml-shapefile//"
 fileStartsWith = 'rod'
 fileEndsWith = '.shp'
 driverName = 'ESRI Shapefile'
@@ -10,9 +10,6 @@ out_ds = out_driver.CreateDataSource(outputMergefn)
 out_layer = out_ds.CreateLayer(outputMergefn, geom_type=geometryType)
 
 fileList = os.listdir(directory)
-
-
-
 
 for file in fileList:
     if file.startswith(fileStartsWith) and file.endswith(fileEndsWith):
@@ -26,5 +23,4 @@ for file in fileList:
             out_feat = None
             out_layer.SyncToDisk()
 
-iface.addVectorLayer('C://Users//Daniel//Desktop//kml-shapefile//rodovias.shp', 'rodovias','ogr')
-
+iface.addVectorLayer('C://Users//Desktop//kml-shapefile//rodovias.shp', 'rodovias','ogr')
